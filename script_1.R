@@ -23,12 +23,12 @@ library(libr)#For meta-data descriptions and dictionary
 options(scipen = 999)
 
 #Read files----
-df <- read_excel("data/raw/Summary_statistics_data_from_articles06032023.xlsx", 
+df <- read_excel("data/raw/Summary_statistics_data_from_articles15122023.xlsx", 
                       col_names = TRUE,
                       sheet = "Combined data",
                       skip = 5)
 
-df_meta <- as.data.frame(df_meta<- read_excel("data/raw/Summary_statistics_data_from_articles06032023.xlsx", 
+df_meta <- as.data.frame(df_meta<- read_excel("data/raw/Summary_statistics_data_from_articles15122023.xlsx", 
                      sheet = "Metadata list", range = "c35:g514"))
 
 #Tidy data frames----+++++++
@@ -292,3 +292,4 @@ df_meta <- rbind(df_meta, df_meta_missing1) %>%
 #Save files as csv
 write.csv(df,"./data/standardised/Summary_statistics_data_from_articles.csv",row.names= FALSE)
 write.csv(df_meta,"./data/standardised/Meta_data_Summary_statistics_data_from_articles.csv",row.names= FALSE)
+
