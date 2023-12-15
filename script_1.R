@@ -292,4 +292,3 @@ df_meta <- rbind(df_meta, df_meta_missing1) %>%
 #Save files as csv
 write.csv(df,"./data/standardised/Summary_statistics_data_from_articles.csv",row.names= FALSE)
 write.csv(df_meta,"./data/standardised/Meta_data_Summary_statistics_data_from_articles.csv",row.names= FALSE)
-
