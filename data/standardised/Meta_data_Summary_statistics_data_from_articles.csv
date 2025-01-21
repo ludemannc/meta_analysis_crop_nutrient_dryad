@@ -452,3 +452,4 @@
 451,"CRCon_Mn_method_Name_nutrient_test","Name_nutrient_test","character","Crop_residue_content_manganese_method"
 452,"CRCon_Mo_method_Name_nutrient_test","Name_nutrient_test","character","Crop_residue_content_molybdenum_method"
 453,"CRCon_Zn_method_Name_nutrient_test","Name_nutrient_test","character","Crop_residue_content_zinc_method"
+454,"CP+CR_Up_N_mean_kg_ha","kg_ha","numeric","Crop_product_plus_crop_residue_uptake_nitrogen_mean"
