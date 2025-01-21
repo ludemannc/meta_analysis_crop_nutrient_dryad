@@ -6,7 +6,7 @@
 #But this dataset includes other crops as well. 
 
 #The following people helped convert data into the excel file include: 
-#Joost Krooshof, Bert Rijk, Tobias Bader, Victoria Miles-Hildago, Emil Löwik and Cameron Ludemann.
+#Joost Krooshof, Bert Rijk, Tobias Bader, Victoria Miles-Hildago, Emil Löwik, Marloes van Loon and Cameron Ludemann.
 
 #This script was written in R version 4.1.0 with a 64-bit computer.
 
@@ -23,13 +23,13 @@ library(libr)#For meta-data descriptions and dictionary
 options(scipen = 999)
 
 #Read files----
-df <- read_excel("data/raw/Summary_statistics_data_from_articles01072024.xlsx", 
+df <- read_excel("data/raw/Summary_statistics_data_from_articles21012025.xlsx", 
                       col_names = TRUE,
                       sheet = "Combined data",
                       skip = 5,
                  col_types = "text")
 
-df_meta <- as.data.frame(df_meta<- read_excel("data/raw/Summary_statistics_data_from_articles01072024.xlsx", 
+df_meta <- as.data.frame(df_meta<- read_excel("data/raw/Summary_statistics_data_from_articles21012025.xlsx", 
                      sheet = "Metadata list", range = "c35:g514"))
 
 #Tidy data frames----+++++++
@@ -224,7 +224,7 @@ cols_num <- c( "Article_ID"                           ,
                "Soil_pH_H2O_1:5_Number"               ,"Soil_N_Alkaline_permanganate_kg_N_ha" ,
                "Soil_Cu_DETPA_extractable_mg_kg"      ,"Soil_Mn_DETPA_extractable_mg_kg"      ,"Soil_NO3-_(Dumas_method)_mg_kg"   , 
                "Soil_NH4+_(Dumas_method)_mg_kg"       ,"N_fixation_kg_N_ha"                   ,"pc_Ndfa_%"                        ,
-               "Soil_Ca_(ammonium_acetate)_mg_kg"     ,"Soil_Mg_(ammonium_acetate)_mg_kg"     ,"Soil_K_(ammonium_acetate)_mg_kg" )
+               "Soil_Ca_(ammonium_acetate)_mg_kg"     ,"Soil_Mg_(ammonium_acetate)_mg_kg"     ,"Soil_K_(ammonium_acetate)_mg_kg"  , "CP+CR_Up_N_mean_kg_ha" )
 
 #Convert selected columns into numeric as desired. 
 df[cols_num] <- sapply(df[cols_num],as.numeric)
@@ -276,7 +276,6 @@ df <-  Standardise_crop_names(df, Crop_original)
 
 #Remove unwanted columns----
 df <- select(df,
-             -Other_variable_40_undefined_units,
              -Other_variable_41_undefined_units,
              -Other_variable_42_undefined_units,
              -Other_variable_43_undefined_units,
